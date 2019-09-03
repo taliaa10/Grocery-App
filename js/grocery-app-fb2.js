@@ -73,14 +73,25 @@ function displayStores(stores) {
   let storeItems = stores.map((store, index) => {
     /////////////////////
     // get grocery items
-    let groceryItems = store.groceryItems.map(groceryItem => {
-      let item = Object.values(groceryItem);
-      let groceries = item.map(item => {
-        return `${item.name} - ${item.category}`;
-      });
-      return groceries;
-    });
-    // .join("");
+    let groceryItems = store.groceryItems
+      .map(groceryItem => {
+        let item = Object.values(groceryItem);
+        let groceries = item.map(item => {
+          return `
+          <div class="item">
+          <div class="content">
+              <div class="ui checkbox">
+              <input type="checkbox" name="example">
+              <label><div class="header">${item.name} - ${item.category}</div></label>
+              </div>  
+          </div>
+          </div>
+          `;
+        });
+        return groceries;
+      })
+      .join("")
+      .replace(/,/g, "");
     console.log(groceryItems);
 
     return `
@@ -95,26 +106,8 @@ function displayStores(stores) {
 
 <div class="ui middle aligned selection list animated">
 
-    <div class="item">
-    <div class="content">
-        <div class="ui checkbox">
-        <input type="checkbox" name="example">
-        <label><div class="header">${groceryItems}</div></label>
-        </div>  
-    </div>
-    </div>
 
-
-
-    <div class="item">
-    <div class="content">
-        <div class="ui checkbox">
-        <input type="checkbox" name="example">
-        <label><div class="header">Baby Food - Baby</div></label>
-        </div>  
-    </div>
-    </div>
-
+${groceryItems}
 
 
       <div class="ui input">
