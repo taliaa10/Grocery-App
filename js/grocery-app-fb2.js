@@ -73,17 +73,15 @@ function displayStores(stores) {
   let storeItems = stores.map((store, index) => {
     /////////////////////
     // get grocery items
-    let groceryItems = store.groceryItems
-      .map(groceryItem => {
-        let item = Object.values(groceryItem);
-        let groceries = item.forEach(item => {
-          console.log(`${store.name} - ${item.name} - ${item.category}`);
-          //   return item.category;
-        });
-        // console.log(groceries);
-        // console.log(groceries);
-      })
-      .join("");
+    let groceryItems = store.groceryItems.map(groceryItem => {
+      let item = Object.values(groceryItem);
+      let groceries = item.map(item => {
+        return `${item.name} - ${item.category}`;
+      });
+      return groceries;
+    });
+    // .join("");
+    console.log(groceryItems);
 
     return `
     <div class="title store-title active">
