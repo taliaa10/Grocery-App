@@ -35,7 +35,6 @@ storesRef.on("value", snapshot => {
     newStore.storeId = store.key;
     newStore.groceryItems.push(store.groceryItems);
     stores.push(newStore);
-    console.log(newStore);
   });
   displayStores(stores);
 });
@@ -46,25 +45,14 @@ function addGroceryItem(storeId, index) {
   let category = document.getElementById("grocery-category-textbox-" + index)
     .value;
 
-  console.log(storeId);
-
   let newItem = new GroceryItem(item, category);
-
-  console.log(newItem);
-
-  let store = stores.find(store => store.storeId == storeId);
-  //   console.log(storesRef.child);
 
   var grocRef = database.ref(`stores/${storeId}/groceryItems`);
   grocRef.push(newItem);
 }
 
 function addStore(name, address) {
-  let newItem = new GroceryItem("Butter", "Food");
-
   let store = new Store(name, address);
-
-  store.addGroceryItem(newItem);
 
   storesRef.push(store);
 }
@@ -73,26 +61,28 @@ function displayStores(stores) {
   let storeItems = stores.map((store, index) => {
     /////////////////////
     // get grocery items
+
     let groceryItems = store.groceryItems
       .map(groceryItem => {
-        let item = Object.values(groceryItem);
-        let groceries = item.map(item => {
-          return `
-          <div class="item">
-          <div class="content">
-              <div class="ui checkbox">
-              <input type="checkbox" name="example">
-              <label><div class="header">${item.name} - ${item.category}</div></label>
-              </div>  
-          </div>
-          </div>
-          `;
-        });
-        return groceries;
+        if (groceryItem) {
+          let item = Object.values(groceryItem);
+          let groceries = item.map(item => {
+            return `
+            <div class="item">
+            <div class="content">
+                <div class="ui checkbox">
+                <input type="checkbox" name="example">
+                <label><div class="header">${item.name} - ${item.category}</div></label>
+                </div>  
+            </div>
+            </div>
+            `;
+          });
+          return groceries;
+        }
       })
       .join("")
       .replace(/,/g, "");
-    console.log(groceryItems);
 
     return `
     <div class="title store-title active">
@@ -106,9 +96,7 @@ function displayStores(stores) {
 
 <div class="ui middle aligned selection list animated">
 
-
 ${groceryItems}
-
 
       <div class="ui input">
         <input type="text" class="grocery-textboxes" id="grocery-item-textbox-${index}" placeholder="Grocery Item...">
@@ -127,7 +115,6 @@ ${groceryItems}
 
 function deleteStore(key) {
   storesRef.child(key).remove();
-  console.log(key);
 }
 
 // EVENT LISTENERS
@@ -138,7 +125,6 @@ addAddressTextbox.addEventListener("keypress", e => {
     let name = toTitleCase(addStoreTextbox.value);
     let address = toTitleCase(addAddressTextbox.value);
     addStore(name, address);
-    console.log(name);
     addStoreTextbox.value = "";
     addAddressTextbox.value = "";
     addStoreTextbox.focus();
