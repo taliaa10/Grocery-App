@@ -1,0 +1,241 @@
+body {
+    font-family: Lato;
+    /* background-image: linear-gradient(to right bottom, #171717, #060606); */
+    background-repeat: no-repeat;
+    background-color: #f5f5fb;
+    color: black;
+    margin: 0 auto;
+    width: 100%;
+    transition: all .3s;
+}
+/* 
+.textbox {
+    height: 30px;
+    width: 200px;
+    border-radius: 2px;
+    border: none;
+    margin: 10px;
+    background-color: white;
+} */
+
+.textbox:focus{
+    outline-color: #5282af;
+}
+
+.add-items-section {
+    margin: 10px;
+    width: 100vw !important;
+    margin: 0 auto;
+    display: flex;
+    /* background-color: #; */
+    position: fixed;
+    top: 0;
+    padding: 10px;
+    margin-left: 200px;
+    /* margin-top: 70px; */
+    /* position: fixed; */
+     z-index: 3;
+    padding-top: 55px;
+    /* padding-bottom: 50px; */
+    /* margin-top: 100px; */
+}
+
+.top-bar {
+    margin-left: 210px;
+    width: 100vw;
+    height: 200px;
+
+}
+
+.address-textbox-div {
+    margin-left: -90;
+}
+
+
+.add-btn {
+    height: 30px;
+    width: 30px;
+    margin-top: 10px !important;
+}
+
+.display-locations-div {
+    margin: 90px 300px;
+    width: 400px;
+}
+
+h2 {
+    width: 250px;
+    margin: 5px 80px;
+    color: #eee;
+    font-family: Pacifico;
+}
+
+header {
+    /* background-color: #282828; */
+    /* padding: 20px; */
+}
+
+nav {
+    width: 280px;
+    background-color: #283c4c;
+    height: 5000px;
+    margin-left: -20px;
+    margin-top: -20px;
+    margin-bottom: -10px;
+    position: fixed;
+
+}
+
+.view-area {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    margin-left: 230px;
+}
+
+#add-location {
+    margin-right: 0 !important;
+}
+
+#store-name-textbox {
+    width: 200px !important;
+}
+
+
+#store-address-textbox {
+    width: 200px !important;
+    margin: 0 !important;
+}
+
+.nav-header {
+    margin: 30px 0 30px -30px !important;
+    text-align: center;
+    /* border-bottom: 1px solid #17d3c928; */
+    padding-bottom: 20px;
+}
+
+
+
+li {
+    display: flex;
+    list-style: none;
+    background-color: white;
+    padding: 15px 0 15px 40px ;
+    border-radius: 3px;
+    font-weight: 400;
+    color: rgb(65, 65, 65);
+    margin-left: -20px;
+    transition: all .2s;
+}
+
+li:hover {
+    background-color: #eee;
+}
+
+
+button:hover {
+    background-color: rgba(173, 0, 0, 0.651);
+}
+
+
+.location-items {
+    width: 700px;
+}
+
+.list-item-text {
+    width: 500px;
+}
+
+.custom-sidebar {
+    background-color: #1e272e !important;
+    padding
+}
+
+
+.custom-store-ul {
+    margin: 200px 0 0 300px !important;
+    width: 700px;
+}
+
+.ui input {
+    margin: 0 30px !important;
+    width: 100px !important;
+}
+
+#add-store-btn {
+    margin-left: -30px;
+}
+
+#store-accordion {
+    margin: 100px 0 200px 0;
+    position: relative;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.store-title {
+    height: 50px;
+}
+
+.ui.accordion .title:not(.ui) {
+    font-size: 1.3em;
+}
+
+.rmv-store-btn {
+    float: right;
+    /* height: 20px; */
+    /* margin-top: 10px !important; */
+    /* position: fixed; */
+    left: 500px;
+    margin-bottom: 50px;
+}
+
+#bg-img {
+    background-image: linear-gradient(#26769950, #26769950), url(images/bg-img.png);
+    height: 170px;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+#grocery-item-textbox {
+    width: 170px !important;
+    margin: 0 !important;
+    margin-right: 10px !important;
+}
+#grocery-category-textbox {
+    width: 170px !important;
+    margin: 0 !important;
+}
+/* 
+.ui.fixed.sticky + p {
+    margin-top: 40px;
+    padding: 50px;
+  } */
+
+.view-items-area {
+    margin-top: 250px;
+    display: flex;
+    margin-left: 250px;
+
+
+}
+
+.ui.styled.accordion .accordion .title, .ui.styled.accordion .title {
+    padding: 40px;
+}
+
+.ui.sidebar.menu .item {
+    border-radius: 0!important;
+    padding: 24px;
+}
+
+#product-card {
+    height: 500px;
+    width: 350px;
+    margin-left: 130px;
+    margin-top: 150px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    z-index: -1;
+}

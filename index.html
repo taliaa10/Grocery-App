@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="http://icons.iconarchive.com/icons/uiconstock/shopping-cart/16/Shoppingcart-01-icon.png"/>
+
+    <title>Grocery App</title>
+    
+</head>
+<body>
+
+    <header>
+
+
+        <div class="ui visible sidebar inverted vertical menu custom-sidebar">
+            <h2 class="nav-header">Grocery List</h2> 
+            <a class="item">
+            Account
+            <i class="user icon yellow"></i>
+            </a>
+            <a class="item">
+            Stores
+            <i class="map pin icon yellow"></i>
+            </a>
+            <a class="item">
+            Items
+            <i class="shopping basket
+            icon yellow"></i>
+            </a>
+        </div>
+        <div class="pusher">
+            
+            <!-- Site content !-->
+        
+            <section>
+                <div class="sticky" id="bg-img">images</div>
+            </section>
+
+
+    
+    </header>
+
+    <body>
+    <section class="view-area">
+            <div class="add-items-section sticky" id="add-items-section">     
+    
+            <div class="ui input">
+                <input type="text" id="store-name-textbox" placeholder="Store Name...">
+            </div>
+            <div class="ui action input address-textbox-div">
+                <input type="text" placeholder="Address..." id="store-address-textbox">
+                <button class="ui icon button yellow" id="add-store-btn">
+                    <i class="plus square icon"></i>
+                </button>
+            </div>
+    
+            </div>
+        </section>
+
+<!-- ACCORDION -->
+
+<!---->
+<section class="view-items-area">
+    <h1>Your Lists</h1>
+
+
+            <div class="ui styled accordion" id="store-accordion">
+
+
+              <div class="title store-title active">
+                <i class="dropdown icon"></i>
+                ${user.name} - ${user.age}
+                <button class="ui icon button" style="float: right;" onclick='deleteStore("${user.userId}")'><i class="trash icon"></i></button>
+              </div>
+                
+                
+        
+              <div class="content">
+        
+        <div class="ui middle aligned selection list animated">
+        
+            <div class="item">
+            <div class="content">
+                <div class="ui checkbox">
+                <input type="checkbox" name="example">
+                <label><div class="header">${hobbyItems}</div></label>
+                </div>  
+            </div>
+            </div>
+        
+
+            <div class="item">
+            <div class="content">
+                <div class="ui checkbox">
+                <input type="checkbox" name="example">
+                <label><div class="header">${hobbyItems}</div></label>
+                </div>  
+            </div>
+            </div>
+        
+        
+        
+                
+              <div class="ui input">
+                <input type="text" class="grocery-textboxes" id="grocery-item-textbox" placeholder="Grocery Item...">
+        
+              <div class="ui action input">
+                <input type="text" class="grocery-textboxes" id="grocery-category-textbox" placeholder="Category...">
+        
+                <button onclick='addHobby("${user.userId}",this)' class="ui icon button teal"><i class="plus square icon"></i></button>
+                </div>   
+                  
+                         
+                         </div>  
+                         </div>  
+                </div>
+
+              <div class="title store-title active">
+                <i class="dropdown icon"></i>
+                ${user.name} - ${user.age}
+                <button class="ui icon button" style="float: right;" onclick='deleteStore("${user.userId}")'><i class="trash icon"></i></button>
+              </div>
+                
+                
+        
+              <div class="content">
+        
+        <div class="ui middle aligned selection list animated">
+        
+            <div class="item">
+            <div class="content">
+                <div class="ui checkbox">
+                <input type="checkbox" name="example">
+                <label><div class="header">${hobbyItems}</div></label>
+                </div>  
+            </div>
+            </div>
+        
+        
+        
+                
+              <div class="ui input">
+                <input type="text" class="grocery-textboxes" id="grocery-item-textbox" placeholder="Grocery Item...">
+        
+              <div class="ui action input">
+                <input type="text" class="grocery-textboxes" id="grocery-category-textbox" placeholder="Category...">
+        
+                <button onclick='addHobby("${user.userId}",this)' class="ui icon button teal"><i class="plus square icon"></i></button>
+                </div>   
+                  
+                         
+                         </div>  
+                </div>
+
+
+<!--
+                    <div class="title store-title active">
+                      <i class="dropdown icon"></i>
+                      Walmart - 433 Pearland Pkwy
+                      <button class="ui icon button" style="float: right;"><i class="trash icon"></i></button>
+                    </div>
+                    <div class="content">
+                      <p class="transition hidden">                          <div class="ui input">
+                            <input type="text" id="store-name-textbox" placeholder="Grocery Item...">
+                            <input type="text" id="store-name-textbox" placeholder="Category...">
+                            </div>                        <button class="ui icon button"><i class="plus square icon"></i></button></p>
+                      <div class="ui middle aligned selection list">
+                            <div class="item">
+                              <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+                              <div class="content">
+                                <div class="header">Helen</div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <img class="ui avatar image" src="/images/avatar/small/christian.jpg">
+                              <div class="content">
+                                <div class="header">Christian</div>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <img class="ui avatar image" src="/images/avatar/small/daniel.jpg">
+                              <div class="content">
+                                <div class="header">Daniel</div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="title store-title active">
+                      <i class="dropdown icon"></i>
+                      Sprout's - 123 Chocolate Bayou
+                      <button class="ui icon button" style="float: right;"><i class="trash icon"></i></button>
+                    </div>
+                    <div class="content">
+                      <p class="transition hidden">        
+                          <div class="ui input">
+                            <input type="text" id="store-name-textbox" placeholder="Grocery Item...">
+                            <input type="text" id="store-name-textbox" placeholder="Category...">
+                            </div>                        <button class="ui icon button"><i class="plus square icon"></i></button></p>
+
+                            <div class="ui middle aligned selection list">
+                                    <div class="item">
+                                      <img class="ui avatar image" src="/images/avatar/small/helen.jpg">
+                                      <div class="content">
+                                        <div class="header">Helen</div>
+                                      </div>
+                                    </div>
+                                    <div class="item">
+                                      <img class="ui avatar image" src="/images/avatar/small/christian.jpg">
+                                      <div class="content">
+                                        <div class="header">Christian</div>
+                                      </div>
+                                    </div>
+                                    <div class="item">
+                                      <img class="ui avatar image" src="/images/avatar/small/daniel.jpg">
+                                      <div class="content">
+                                        <div class="header">Daniel</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                    </div>
+                    <div class="title store-title active">
+                      <i class="dropdown icon"></i>
+                      How do you acquire a dog?
+                    </div>
+                    <div class="content">
+                      <p class="transition hidden">Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+                      <p class="transition hidden">A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+                    </div>-->
+                  </div>
+
+                
+                  <!-- <div class="ui card fixed sticky top" id="product-card">
+                        <div class="image">
+                          <img src="/images/avatar2/large/bread.png">
+                        </div>
+                        <div class="content">
+                          <a class="header">Bread - $3.49</a>
+                          <div class="meta">
+                            <span class="date">Highly Recommended</span>
+                          </div>
+                          <div class="description">
+                                You must try our delicious H‑E‑B Select Ingredients French Bread. It's baked fresh in‑store and ready to compliment any meal.
+                          </div>
+                        </div>
+                        <div class="extra content">
+                          <a>
+                                <div class="ui star rating" data-rating="3">HERE</div>
+
+                          </a>
+                        </div>
+                      </div> -->
+
+
+                </section>
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first --> 
+<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+//   Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyArqhnl0Ec5iHes6lYRWiZofKUv09IUsm0",
+    authDomain: "grocery-app-37723.firebaseapp.com",
+    databaseURL: "https://grocery-app-37723.firebaseio.com",
+    projectId: "grocery-app-37723",
+    storageBucket: "grocery-app-37723.appspot.com",
+    messagingSenderId: "481466256062",
+    appId: "1:481466256062:web:d0cc8a074e9f2bc0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database() 
+</script>
+
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+
+<!-- SEMANTIC UI SCRIPTS -->
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+
+<script src="js/store.js"></script>
+<script src="js/grocery-item.js"></script>
+<script src="js/grocery-app-fb2.js"></script>
+<script src="js/usercopy.js"></script>
+<script src="js/hobby.js"></script>
+</html>
